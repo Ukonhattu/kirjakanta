@@ -11,6 +11,14 @@ def books_index():
 def books_form():
     return render_template("books/new.html")
 
+@app.route("/books/<book_id>/", methods=["POST"])
+def book_set_read(book_id):
+    book = Book.query.get(book_id)
+    book.read = True
+    db.session().commit()
+
+    return redirect(url_for("books_index"))
+
 @app.route("/books/", methods=["POST"])
 def books_create():
     name = Book(request.form.get("name"))
