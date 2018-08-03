@@ -10,3 +10,5 @@ Toimintoja:
   - Kirjojen lisääminen/tarkasteleminen/poisto
     - Kirjojen tarkasteleminen eri kriiterien perusteella kuten genre tai luettu/lukematta
   - Jos aikaa jää niin useampien listojen tekeminen, joita voisi myös jakaa
+
+  Heroku: kirjakanta.herokuapp.com 
