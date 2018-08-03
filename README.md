@@ -11,4 +11,4 @@ Toimintoja:
     - Kirjojen tarkasteleminen eri kriiterien perusteella kuten genre tai luettu/lukematta
   - Jos aikaa jää niin useampien listojen tekeminen, joita voisi myös jakaa
 
-  Heroku: kirjakanta.herokuapp.com 
+  Heroku: [kirjakanta.herokuapp.com] 
