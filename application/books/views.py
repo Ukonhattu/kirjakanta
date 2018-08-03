@@ -1,6 +1,11 @@
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
 from application import app, db
 from application.books.models import Book
+
+
+@app.route("/books", methods=["GET"])
+def books_index():
+    return render_template("books/list.html", books = Book.query.all())
 
 @app.route("/books/new/")
 def books_form():
@@ -13,4 +18,4 @@ def books_create():
     db.session().add(name)
     db.session().commit()
 
-    return "hello world"
+    return redirect(url_for("books_index"))
