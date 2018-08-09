@@ -9,6 +9,13 @@
       <td>
         {{ form.name }}
       </td>
+      <td>
+        <ul>
+          {% for error in form.name.errors %}
+          <li> {{ error }} </li>
+          {% endfor %}
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>
@@ -19,7 +26,7 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2">
+      <td colspan="3">
         <input type="submit" value="Add a new book" />
       </td>
     </tr>

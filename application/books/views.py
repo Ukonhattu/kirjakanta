@@ -17,6 +17,9 @@ def book_set_read(book_id):
 
     form = BookForm(request.form)
 
+    if not form.validate():
+        return render("books/new.html", form = form)
+        
     book = Book(form.name.data)
     book.read = form.read.data
 
