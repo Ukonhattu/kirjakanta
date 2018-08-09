@@ -18,5 +18,10 @@ def auth_login():
                                error = "No such username or password")
 
 
-    print("Käyttäjä " + user.name + " tunnistettiin")
-    return redirect(url_for("index"))  
+    login_user(user)
+    return redirect(url_for("index"))
+
+@app.route("/auth/logout")
+def auth_logout():
+    logout_user()
+    return redirect(url_for("index"))   
