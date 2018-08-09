@@ -15,6 +15,14 @@ def books_form():
 @app.route("/books/<book_id>/", methods=["POST"])
 def book_set_read(book_id):
 
+    b = Book.query.get(book_id)
+    b.read = True
+    db.session().commit()
+
+    return redirect(url_for("books_index"))
+
+@app.route("/books/", methods=["POST"])
+def books_create():
     form = BookForm(request.form)
 
     if not form.validate():
@@ -24,15 +32,6 @@ def book_set_read(book_id):
     book.read = form.read.data
 
     db.session().add(book)
-    db.session().commit()
-
-    return redirect(url_for("books_index"))
-
-@app.route("/books/", methods=["POST"])
-def books_create():
-    name = Book(request.form.get("name"))
-
-    db.session().add(name)
     db.session().commit()
 
     return redirect(url_for("books_index"))

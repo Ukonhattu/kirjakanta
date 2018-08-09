@@ -1,7 +1,7 @@
 from application import db
 
 class Book(db.Model):
-    """Kirjan tehtäcien hallinta"""
+    """Kirjan tehtävien hallinta"""
 
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
