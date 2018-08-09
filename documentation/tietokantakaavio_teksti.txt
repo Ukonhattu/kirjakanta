@@ -1,0 +1,34 @@
+#https://app.quickdatabasediagrams.com
+
+User
+-------
+UserID PK int
+UserName String
+Password String
+Admin boolean
+
+Book
+rel >- User.UserID
+------
+BookID PK int
+UserID Sring
+
+Genre
+-------
+GenreID PK int
+name String
+
+BookGenre
+------
+BookID int FK >- Book.BookID
+GenreID int FK >- Genre.GenreID
+
+Author
+------
+AuthorID PK int
+Name String
+
+BookAuthor
+------
+BookID int FK >- Book.BookID
+AuthorID int FK >- Author.AuthorID
