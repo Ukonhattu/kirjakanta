@@ -18,12 +18,12 @@ def book_set_read(book_id):
     form = BookForm(request.form)
 
     if not form.validate():
-        return render("books/new.html", form = form)
-        
+        return render_template("books/new.html", form = form)
+
     book = Book(form.name.data)
     book.read = form.read.data
 
-    db.session().add(t)
+    db.session().add(book)
     db.session().commit()
 
     return redirect(url_for("books_index"))

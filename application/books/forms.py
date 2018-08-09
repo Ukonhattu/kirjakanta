@@ -1,8 +1,8 @@
-from flask_wtf import FLaskForm
-from wtforms import StringField
+from flask_wtf import FlaskForm
+from wtforms import StringField, BooleanField, validators
 
-class BookForm(FLaskForm):
-    name StringField("Book name", validators.Length(min=2))
+class BookForm(FlaskForm):
+    name  = StringField("Book name", [validators.Length(min=2)])
     read = BooleanField("Read")
 
     class Meta:
