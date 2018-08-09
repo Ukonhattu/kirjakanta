@@ -15,8 +15,8 @@ Kirjautunut nimellä {{ current_user.name }} <a href"{{ url_for('auth_logout') }
     {% endif %}
 
     <ul>
-<li><a href="{{ url_for('books_index') }}">List tasks</a></li>
-<li><a href="{{ url_for('books_form') }}">Add a task</a></li>
+<li><a href="{{ url_for('books_index') }}">List books</a></li>
+<li><a href="{{ url_for('books_form') }}">Add a book</a></li>
     </ul>
 
     {% block body %}
