@@ -1,7 +1,27 @@
 {% extends "layout.html" %}
 {% block body %}
 <form method="POST" action="{{ url_for('books_create') }}">
-  <input type="text" name="name" />
-  <input type="submit" value="Add a new book" />
+  <tabel>
+    <tr>
+      <td>
+        {{ form.name.label }}
+      </td>
+      <td>
+        {{ form.name }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.read.label }}
+      </td>
+      <td>
+        {{ form.done }}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="submit" value="Add a new book" />
+      </td>
+    </tr>
 </form>
 {% endblock %}

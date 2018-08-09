@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from application import app, db
 from application.books.models import Book
+from application.books.forms import BookForm
 
 
 @app.route("/books", methods=["GET"])
@@ -9,7 +10,7 @@ def books_index():
 
 @app.route("/books/new/")
 def books_form():
-    return render_template("books/new.html")
+    return render_template("books/new.html", form=BookForm())
 
 @app.route("/books/<book_id>/", methods=["POST"])
 def book_set_read(book_id):
