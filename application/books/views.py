@@ -14,8 +14,13 @@ def books_form():
 
 @app.route("/books/<book_id>/", methods=["POST"])
 def book_set_read(book_id):
-    book = Book.query.get(book_id)
-    book.read = True
+
+    form = BookForm(request.form)
+
+    book = Book(form.name.data)
+    book.read = form.read.data
+
+    db.session().add(t)
     db.session().commit()
 
     return redirect(url_for("books_index"))
