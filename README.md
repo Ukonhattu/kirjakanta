@@ -26,4 +26,4 @@ Toimintoja:
   - ylläpitäjänä voin tarkastella käyttäjiä sekä heidän lisäämiään kirjojaan ja genrejä
 
   Tietokantakaavio:
-  ![alt text](documentation/Tietokantakaavio)
+  ![alt text](documentation/Tietokantakaavio.png)
