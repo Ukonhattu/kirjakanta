@@ -29,7 +29,6 @@ def auth_logout():
 
 
 @app.route("/auth/", methods=["POST"])
-@login_required
 def account_create():
     form = AccountForm(request.form)
 
