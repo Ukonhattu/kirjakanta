@@ -12,7 +12,7 @@
       <td>{{ book.read }}</td>
       <td>
         <form method="POST" action="{{ url_for('book_set_read', book_id=book.id) }}">
-          <input type="submit" value="Check read" />
+          <input type="submit" value="Check read/unread" />
         </form>
       </td>
       <td>

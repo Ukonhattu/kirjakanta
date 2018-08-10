@@ -21,7 +21,10 @@ def books_form():
 def book_set_read(book_id):
 
     b = Book.query.get(book_id)
-    b.read = True
+    if b.read:
+        b.read = False
+    else:
+        b.read = True
     db.session().commit()
 
     return redirect(url_for("books_index"))
