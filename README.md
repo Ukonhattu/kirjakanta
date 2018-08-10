@@ -3,6 +3,9 @@ Aiheen kuvaus
 Luodaan sovellus jonka avulla käyttäjä voi pitää kirjaa lukemistaan kirjoista ja niistä kirjoista jotka haluaa lukea.
 Kirjat voi jakaa kategorioihin niiden genren sekä kirjasarjan perusteella. Oletuksena jokainen käyttäjä voi nähdä vain oman listansa.
 
+Tunnettuja haavoittuuvuuksia ja muita ongelmia:
+  - Kirjoja voi poistaa tai ne merkitä luetuiksi id:n perusteella vaikka ei olisi oma kirja
+
 Toimintoja:
   - Kirjautuminen
   - Genren lisääminen/tarkasteleminen/poisto
