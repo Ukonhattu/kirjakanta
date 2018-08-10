@@ -26,3 +26,20 @@ def auth_login():
 def auth_logout():
     logout_user()
     return redirect(url_for("index"))
+
+
+@app.route("/auth/", methods=["POST"])
+@login_required
+def account_create():
+    form = AccountForm(request.form)
+
+    if not form.validate():
+        return render_template("auth/new.html", form = form)
+
+    account = Account(form.username.data, form.username.data, form.password.data)
+
+
+    db.session().add(account)
+    db.session().commit()
+
+    return redirect(url_for("books_index"))
