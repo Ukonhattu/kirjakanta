@@ -27,6 +27,10 @@ def auth_logout():
     logout_user()
     return redirect(url_for("index"))
 
+@app.route("/auth/")
+def account_form():
+    return render_template("auth/new.html", form=AccountForm())
+
 
 @app.route("/auth/", methods=["POST"])
 def account_create():
