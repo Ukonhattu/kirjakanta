@@ -9,7 +9,7 @@ from application.books.forms import BookForm
 @app.route("/books", methods=["GET"])
 @login_required
 def books_index():
-    return render_template("books/list.html", books = Book.query.filter_by(account_id = current_user.id))
+    return render_template("books/list.html", books = Book.query.order_by(id).filter_by(account_id = current_user.id))
 
 @app.route("/books/new/")
 @login_required
