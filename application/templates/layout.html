@@ -12,6 +12,7 @@ Kirjautunut nimellä {{ current_user.name }} <a href="{{ url_for('auth_logout') 
     </p>
     {% else %}
     <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+    <a href="{{ url_for('account_create') }}">Rekisteröidy</a>
     {% endif %}
 
     <ul>
