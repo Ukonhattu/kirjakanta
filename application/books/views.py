@@ -42,3 +42,13 @@ def books_create():
     db.session().commit()
 
     return redirect(url_for("books_index"))
+
+@app.route("/books/delete/<book_id>/", methods=["POST"])
+@login_required
+def books_delete(book_id):
+
+    b = Book.query.get(book_id)
+    db.session().delete(b)
+    db.session.commit()
+
+    return redirect(url_for("books_index"))

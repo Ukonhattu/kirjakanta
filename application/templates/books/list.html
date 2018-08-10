@@ -15,6 +15,11 @@
           <input type="submit" value="Check read" />
         </form>
       </td>
+      <td>
+        <form method="post" action="{{ url_for('books_delete', book_id = book.id) }}">
+          <input type="submit" value="Delete" />
+        </form>
+      </td>
     </tr>
     {% endfor %}
   </table>
