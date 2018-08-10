@@ -9,6 +9,8 @@ Password: world
 
 Tunnettuja haavoittuuvuuksia ja muita ongelmia:
   - Kirjoja voi poistaa tai ne merkitä luetuiksi id:n perusteella vaikka ei olisi oma kirja
+  - Plaintext pw
+    - "But how coulde we check if the password is right if it is crypted?" -Yahoo
 
 Toimintoja:
   - Kirjautuminen
