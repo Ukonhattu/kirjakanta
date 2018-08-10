@@ -3,7 +3,7 @@ from flask_login import login_user, logout_user
 
 from application import app
 from application.auth.models import User
-from application.auth.forms import LoginForm
+from application.auth.forms import LoginForm, UserForm
 
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():
@@ -28,12 +28,12 @@ def auth_logout():
     return redirect(url_for("index"))
 
 @app.route("/auth/")
-def account_form():
+def user_form():
     return render_template("auth/new.html", form=AccountForm())
 
 
 @app.route("/auth/", methods=["POST"])
-def account_create():
+def user_create():
     form = AccountForm(request.form)
 
     if not form.validate():
