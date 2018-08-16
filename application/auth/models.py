@@ -36,7 +36,7 @@ class User(Base):
 
         stmt = text("SELECT Account.id, Account.name, COUNT(Book.id) as bookcount FROM Account"
                     " LEFT JOIN Book ON Book.account_id = Account.id"
-                    " WHERE (Book.read = 1)"
+                    " WHERE (Book.read = '1')"
                     " GROUP BY Account.id"
                     " ORDER BY bookcount"
                     " LIMIT 10")
