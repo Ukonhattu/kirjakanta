@@ -5,11 +5,15 @@
     <tr>
       <th>Book</th>
       <th>Read</th>
+      <th>Genres</th>
     </tr>
     {% for book in books %}
     <tr>
       <td>{{ book.name }}</td>
       <td>{{ book.read }}</td>
+      <td>
+        {{book.getGenres()}}
+     </td>
       <td>
         <form method="POST" action="{{ url_for('book_set_read', book_id=book.id) }}">
           <input type="submit" value="Check read/unread" />

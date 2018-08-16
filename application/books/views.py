@@ -4,6 +4,7 @@ from flask_login import login_required, current_user
 from application import app, db
 from application.books.models import Book
 from application.books.forms import BookForm
+from application.genre.models import Genre
 
 
 @app.route("/books", methods=["GET"])
@@ -40,6 +41,20 @@ def books_create():
     book = Book(form.name.data)
     book.read = form.read.data
     book.account_id = current_user.id
+
+    genres = form.genres.data.split(";")
+
+    for genre in genres:
+        g = Genre.query.filter_by(name=genre).first()
+        if g is not None:
+            book.genres.append(g)
+        else:
+            g = Genre(genre)
+            db.session.add(g)
+            book.genres.append(g)
+        db.session.commit()
+
+
 
     db.session().add(book)
     db.session().commit()
