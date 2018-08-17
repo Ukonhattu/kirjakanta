@@ -5,13 +5,13 @@
 </p>
 {% if most_read is defined %}
 <p>
-  Eniten kirjoja lukeneet:
+  Eniten kirjoja lukeneet (Top 10):
 </p>
 
 <ul>
   {% for user in most_read %}
   <li>
-    {{user.id}}  {{user.name}} Lukenut {{user.book_count}} kirjaa
+     {{user.id}} |  {{user.name}} Lukenut {{user.book_count}} kirjaa
   </li>
   {% endfor %}
 </ul>
