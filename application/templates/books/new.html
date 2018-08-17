@@ -1,14 +1,11 @@
 {% extends "layout.html" %}
 {% block body %}
 <form method="POST" action="{{ url_for('books_create') }}">
-  <tabel>
-    <tr>
-      <td>
+  <div class="form-group">
+    <label for="username">
         {{ form.name.label }}
-      </td>
-      <td>
-        {{ form.name }}
-      </td>
+    </label>
+        {{ form.name(class_="form-control") }}
       <td>
         <ul>
           {% for error in form.name.errors %}
@@ -16,12 +13,14 @@
           {% endfor %}
         </ul>
       </td>
-      <td>
+    </div>
+      <div class="form-group">
+        <label for="genres">
         {{ form.genres.label }} (Erottele genret puolipiseellä ";")
-      </td>
-      <td>
-        {{ form.genres }}
-      </td>
+        </label>
+
+        {{ form.genres(class_="form-control") }}
+
       <td>
         <ul>
           {% for error in form.genres.errors %}
@@ -29,19 +28,16 @@
           {% endfor %}
         </ul>
       </td>
-    </tr>
-    <tr>
-      <td>
-        {{ form.read.label }}
-      </td>
-      <td>
-        {{ form.read }}
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="submit" value="Add a new book" />
-      </td>
-    </tr>
+    </div>
+
+  <div class="form-check">
+
+
+        {{ form.read(class_="form-check-input") }}
+         <label class="form-check-label" for="exampleCheck1">
+             {{ form.read.label }}
+        </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Add a new book</button>
 </form>
 {% endblock %}

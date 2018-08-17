@@ -38,7 +38,7 @@ class User(Base):
                     " LEFT JOIN Book ON Book.account_id = Account.id"
                     " WHERE (Book.read = '1')"
                     " GROUP BY Account.id"
-                    " ORDER BY bookcount"
+                    " ORDER BY bookcount DESC"
                     " LIMIT 10")
         res = db.engine.execute(stmt)
 
