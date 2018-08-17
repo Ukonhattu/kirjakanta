@@ -1,30 +1,32 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
-    <tr>
-      <th>Book</th>
-      <th>Read</th>
-      <th>Genres</th>
-    </tr>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">Book</div>
+      <div class="col-sm">Read</div>
+      <div class="col-sm">Genres</div>
+      <div class="col-sm">Change status</div>
+      <div class="col-sm">Delete</div>
+    </div>
     {% for book in books %}
-    <tr>
-      <td>{{ book.name }}</td>
-      <td>{{ book.read }}</td>
-      <td>
-        {{book.getGenres()}}
-     </td>
-      <td>
+    <div class="row">
+      <div class="col-sm">{{ book.name }}</div>
+      <div class="col-sm">{{ book.read }}</div>
+      <div class="col-sm">{{book.getGenres()}}</div>
+
+      <div class="col-sm">
         <form method="POST" action="{{ url_for('book_set_read', book_id=book.id) }}">
           <input type="submit" value="Check read/unread" />
         </form>
-      </td>
-      <td>
+      </div>
+      <div class="col-sm">
         <form method="post" action="{{ url_for('books_delete', book_id = book.id) }}">
           <input type="submit" value="Delete" />
         </form>
-      </td>
-    </tr>
+      </div>
+    </div>
+
     {% endfor %}
-  </table>
+
 {% endblock %}
