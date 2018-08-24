@@ -2,33 +2,39 @@
 
 {% block body %}
   <div class="container">
-    <div class="row">
-      <div class="col-sm">Book</div>
-      <div class="col-sm">Read</div>
-      <div class="col-sm">Genres</div>
-      <div class="col-sm">Authors</div>
-      <div class="col-sm">Change status</div>
-      <div class="col-sm">Delete</div>
-    </div>
-    {% for book in books %}
-    <div class="row">
-      <div class="col-sm">{{ book.name }}</div>
-      <div class="col-sm">{{ book.read }}</div>
-      <div class="col-sm">{{book.getGenres()}}</div>
-      <div class="col-sm">{{book.getAuthors()}}</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Book</th>
+          <th>Read</th>
+          <th>Genres</th>
+          <th>Authors</th>
+          <th>Change status</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+        <tr>
+          <td>{{ book.name }}</td>
+          <td>{{ book.read }}</td>
+          <td>{{book.getGenres()}}</td>
+          <td>{{book.getAuthors()}}</td>
 
-      <div class="col-sm">
-        <form method="POST" action="{{ url_for('book_set_read', book_id=book.id) }}">
-          <input type="submit" value="Check read/unread" />
-        </form>
-      </div>
-      <div class="col-sm">
-        <form method="post" action="{{ url_for('books_delete', book_id = book.id) }}">
-          <input type="submit" value="Delete" />
-        </form>
-      </div>
-    </div>
+          <td>
+            <form method="POST" action="{{ url_for('book_set_read', book_id=book.id) }}">
+              <input type="submit" value="Check read/unread" />
+            </form>
+          </td>
+          <td>
+            <form method="post" action="{{ url_for('books_delete', book_id = book.id) }}">
+              <input type="submit" value="Delete" />
+            </form>
+          </td>
+        </tr>
+      </tbody>
 
     {% endfor %}
+    </table>
   </div>
 {% endblock %}
