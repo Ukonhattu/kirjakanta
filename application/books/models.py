@@ -31,10 +31,14 @@ class Book(Base):
         response = []
         for genre in self.genres:
             response.append(genre.name)
+        if not response:
+            return "Unkown"
         return response
 
     def getAuthors(self):
         response = []
         for author in self.authors:
             response.append(author.name)
+        if not response:
+            return "Unkown"
         return response
