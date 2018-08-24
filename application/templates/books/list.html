@@ -23,12 +23,12 @@
 
           <td>
             <form method="POST" action="{{ url_for('book_set_read', book_id=book.id) }}">
-              <input type="submit" value="Check read/unread" />
+              <input type="submit" class="btn btn-primary" value="Check read/unread" />
             </form>
           </td>
           <td>
             <form method="post" action="{{ url_for('books_delete', book_id = book.id) }}">
-              <input type="submit" value="Delete" />
+              <input type="submit" class="btn btn-danger" value="Delete" />
             </form>
           </td>
         </tr>
