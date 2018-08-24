@@ -9,6 +9,7 @@
           <th>Read</th>
           <th>Genres</th>
           <th>Authors</th>
+          <th>Serie</th>
           <th>Change status</th>
           <th>Delete</th>
         </tr>
@@ -20,6 +21,7 @@
           <td>{{ book.read }}</td>
           <td>{{book.getGenres()}}</td>
           <td>{{book.getAuthors()}}</td>
+          <td>{{book.getSeries()}}</td>
 
           <td>
             <form method="POST" action="{{ url_for('book_set_read', book_id=book.id) }}">

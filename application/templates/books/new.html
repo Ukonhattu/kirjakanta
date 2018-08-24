@@ -44,6 +44,21 @@
         </ul>
       </td>
     </div>
+    <div class="form-group">
+      <label for="series">
+        {{ form.series.label }}
+      </label>
+
+        {{ form.series(class_="form-control") }}
+
+      <td>
+        <ul>
+          {% for error in form.series.errors %}
+          <li> {{ error }} </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </div
   <div class="form-check">
 
 

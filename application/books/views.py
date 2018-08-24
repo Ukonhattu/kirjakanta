@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, abort
 from flask_login import current_user
 
 from application import app, db, login_required
@@ -6,6 +6,7 @@ from application.books.models import Book
 from application.books.forms import BookForm
 from application.genre.models import Genre
 from application.author.models import Author
+from application.series.models import Series
 
 
 @app.route("/books", methods=["GET"])
@@ -42,6 +43,16 @@ def books_create():
     book = Book(form.name.data)
     book.read = form.read.data
     book.account_id = current_user.id
+    series = form.series.data
+    if not series:
+        book.series_id = 0
+    else:
+        s = Series.query.filter_by(name=series).first()
+        if s is None:
+            s = Series(series)
+            db.session.add(s)
+            db.session.commit()
+        book.series_id = s.id
 
     genres = form.genres.data.split(";")
 

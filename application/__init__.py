@@ -70,6 +70,10 @@ from application.genre import views
 from application.author import models
 from application.author import views
 
+from application.series import models
+from application.series import views
+
+
 #lisää kirjautumisesta
 @login_manager.user_loader
 def load_user(user_id):
