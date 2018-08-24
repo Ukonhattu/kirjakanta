@@ -6,6 +6,7 @@
       <div class="col-sm">Book</div>
       <div class="col-sm">Read</div>
       <div class="col-sm">Genres</div>
+      <div class="col-sm">Authors</div>
       <div class="col-sm">Change status</div>
       <div class="col-sm">Delete</div>
     </div>
@@ -14,6 +15,7 @@
       <div class="col-sm">{{ book.name }}</div>
       <div class="col-sm">{{ book.read }}</div>
       <div class="col-sm">{{book.getGenres()}}</div>
+      <div class="col-sm">{{book.getAuthors()}}</div>
 
       <div class="col-sm">
         <form method="POST" action="{{ url_for('book_set_read', book_id=book.id) }}">

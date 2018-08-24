@@ -31,6 +31,12 @@ class User(Base):
     def is_authenticated(self):
         return True
 
+    def roles(self):
+        if self.admin is True:
+            return ["ADMIN"]
+        else:
+            return ["USER"]
+
     @staticmethod
     def find_users_with_most_read_books():
 

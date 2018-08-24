@@ -2,7 +2,7 @@
 {% block body %}
 <form method="POST" action="{{ url_for('books_create') }}">
   <div class="form-group">
-    <label for="username">
+    <label for="book_name">
         {{ form.name.label }}
     </label>
         {{ form.name(class_="form-control") }}
@@ -14,10 +14,10 @@
         </ul>
       </td>
     </div>
-      <div class="form-group">
-        <label for="genres">
+    <div class="form-group">
+      <label for="genres">
         {{ form.genres.label }} (Erottele genret puolipiseellä ";")
-        </label>
+      </label>
 
         {{ form.genres(class_="form-control") }}
 
@@ -29,7 +29,21 @@
         </ul>
       </td>
     </div>
+    <div class="form-group">
+      <label for="authors">
+        {{ form.authors.label }} (Erottele kirjailijat puolipiseellä ";")
+      </label>
 
+        {{ form.authors(class_="form-control") }}
+
+      <td>
+        <ul>
+          {% for error in form.authors.errors %}
+          <li> {{ error }} </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </div>
   <div class="form-check">
 
 
