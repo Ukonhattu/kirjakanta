@@ -79,6 +79,8 @@ def books_create():
 def books_delete(book_id):
 
     b = Book.query.get(book_id)
+    if b.account_id != current_user.id:
+        return login_manager.unauthorized()
     db.session().delete(b)
     db.session.commit()
 
