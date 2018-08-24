@@ -36,3 +36,17 @@ Toimintoja:
 
   Tietokantakaavio:
   ![alt text](documentation/Tietokantakaavio.png)
+
+
+  Asennusohjeet:
+    Ovat hieman myöhässä. Tässä pikaisesti laaditut
+
+    - Lataa tiedostot githubista
+    - Luo python virtuaaliympäristö komennolla
+      - python -m venv venv
+    - avaa virutaali ympäristö
+      - source venv/bin/activate
+    - Asenna riipuvuudet
+      - pip freeze | grep -v pkg-resources > requirements.txt
+    - Käynnistä sovellus
+      - python run.py
