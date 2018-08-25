@@ -44,7 +44,7 @@ Toimintoja:
     - Lataa tiedostot githubista
     - Luo python virtuaaliympäristö komennolla
       - python -m venv venv
-    - avaa virutaali ympäristö
+    - avaa virutaaliympäristö
       - source venv/bin/activate
     - Asenna riipuvuudet
       - pip install -r requirements.txt
