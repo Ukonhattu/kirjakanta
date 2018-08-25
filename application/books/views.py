@@ -12,7 +12,7 @@ from application.series.models import Series
 @app.route("/books", methods=["GET"])
 @login_required()
 def books_index():
-    return render_template("books/list.html", books = Book.query.order_by("id").filter_by(account_id = current_user.id))
+    return render_template("books/list.html", books = Book.query.order_by("id").filter_by(account_id = current_user.id), form=BookForm())
 
 @app.route("/books/new/")
 @login_required()
