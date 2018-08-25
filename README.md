@@ -47,6 +47,6 @@ Toimintoja:
     - avaa virutaali ympäristö
       - source venv/bin/activate
     - Asenna riipuvuudet
-      - pip freeze | grep -v pkg-resources > requirements.txt
+      - pip install -r requirements.txt
     - Käynnistä sovellus
       - python run.py
