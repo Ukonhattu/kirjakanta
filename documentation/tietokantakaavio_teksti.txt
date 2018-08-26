@@ -8,10 +8,13 @@ Password String
 Admin boolean
 
 Book
-rel >- User.UserID
 ------
 BookID PK int
-UserID Sring
+UserID int
+Name String
+Read Boolean
+Account_id FK >- User.UserID
+Series_id FK >- Series.SeriesID
 
 Genre
 -------
@@ -32,3 +35,8 @@ BookAuthor
 ------
 BookID int FK >- Book.BookID
 AuthorID int FK >- Author.AuthorID
+
+Series
+----------
+SeriesID PK int
+Series name
