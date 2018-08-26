@@ -24,15 +24,15 @@ Toimintoja:
 
 
   User Story:
-  - Käyttäjänä voin lisätä kirjoja listaani
-  - Käyttäjänä voin lisätä genrejä sekä kirjasarjoja "alaotsikoiksi" helpottamaan lajittelua
-  - käyttäjänä voin listata kirjoja genren tai kirjasarjan perusteella
-  - käyttäjänä voin merkitä lukemani kirjat luetuiksi
-  - käyttäjänä voin määrittää onko listani julkinen vai ei
-  - käyttäjänä voin selata muiden käyttäjien julkisia listoja
+  - Käyttäjänä voin lisätä kirjoja listaani -- Tehty
+  - Käyttäjänä voin lisätä genrejä sekä kirjasarjoja "alaotsikoiksi" helpottamaan lajittelua -- Kirjoihin on liitetty genret, tekijät sekä kirjsarja
+  - käyttäjänä voin listata kirjoja genren tai kirjasarjan perusteella -- ei tehty
+  - käyttäjänä voin merkitä lukemani kirjat luetuiksi -- tehty
+  - käyttäjänä voin määrittää onko listani julkinen vai ei -- ei tehty
+  - käyttäjänä voin selata muiden käyttäjien julkisia listoja -- ei tehty
 
 
-  - ylläpitäjänä voin tarkastella käyttäjiä sekä heidän lisäämiään kirjojaan ja genrejä
+  - ylläpitäjänä voin tarkastella käyttäjiä sekä heidän lisäämiään kirjojaan ja genrejä -- ei tehty
 
   Tietokantakaavio:
   ![alt text](documentation/Tietokantakaavio.png)
