@@ -50,3 +50,5 @@ Toimintoja:
       - pip install -r requirements.txt
     - Käynnistä sovellus
       - python run.py
+
+[Käyttöohje](documentation/kayttoohje.md)
