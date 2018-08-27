@@ -1,5 +1,5 @@
 # Käyttöohje
-Sovellus osoitteesta karjakanta.herokuapp.com
+Sovellus osoitteesta http://karjakanta.herokuapp.com
 
 ## Etusivu
 Etusivulla näkee eniten kirjoja lukeneet käyttäjät. Tämä näkyy kaikille käyttäjille. Jotta muita toimintoja voi käyttää, täytyy olla rekisteröitynyt käyttäjä.
