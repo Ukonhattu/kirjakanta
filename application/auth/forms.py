@@ -14,3 +14,11 @@ class UserForm(FlaskForm):
 
     class Meta:
         csrf = False
+
+class ModifyForm(FlaskForm):
+    username = StringField("Username", [validators.Length(min=2, max=16)], default="username")
+    password = PasswordField("Password", [validators.Length(min=2, max=16)])
+
+
+    class Meta:
+        csrf = False

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Change your information</h1>
+<form method="POST" action="{{ url_for('user_modify') }}">
+  <div class="form-group">
+    <label for="username">
+        {{ form.username.label }}
+    </label>
+
+
+        {{ form.username(class_="form-control") }}
+
+        <ul>
+          {% for error in form.username.errors %}
+          <li> {{ error }} </li>
+          {% endfor %}
+        </ul>
+    </div>
+    <div class="form-group">
+        <label for="password">
+          {{ form.password.label }}
+      </label>
+
+        {{ form.password(class_="form-control") }}
+
+
+        <ul>
+          {% for error in form.password.errors %}
+          <li> {{ error }} </li>
+          {% endfor %}
+        </ul>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<form method="POST" action="{{ url_for('user_delete')}}">
+  <button type="submit" class="btn btn-danger">Delete user</buttton>
+</form>
+{% endblock %}

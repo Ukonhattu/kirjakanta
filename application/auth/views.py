@@ -1,9 +1,10 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, current_user
 
 from application import app, db, login_required
 from application.auth.models import User
-from application.auth.forms import LoginForm, UserForm
+from application.auth.forms import LoginForm, UserForm, ModifyForm
+from application.books.models import Book
 
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():
@@ -44,5 +45,40 @@ def user_create():
 
     db.session().add(user)
     db.session().commit()
+
+    return redirect(url_for("books_index"))
+
+@app.route("/auth/userpage/modify", methods=["POST"])
+@login_required()
+def user_modify():
+    form = UserForm(request.form)
+
+    if not form.validate():
+        return render_template("auth/userpage.html", form = form)
+    current_user.username = form.username.data
+    current_user.password = form.password.data
+    current_user.name = form.username.data
+
+    db.session.commit()
+
+    return redirect(url_for("user_page"))
+
+@app.route("/auth/userpage")
+@login_required()
+def user_page():
+    form = ModifyForm()
+    form.username.default = current_user.username
+    form.process()
+    return render_template("auth/userpage.html", form = form)
+
+@app.route("/auth/userpage/delete", methods=["POST"])
+@login_required()
+def user_delete():
+    book = Book.query.filter_by(account_id=current_user.id).all()
+    for b in book:
+        db.session.delete(b)
+    db.session.delete(current_user)
+    db.session.commit()
+    logout_user()
 
     return redirect(url_for("books_index"))
