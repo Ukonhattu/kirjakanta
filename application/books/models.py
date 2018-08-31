@@ -35,6 +35,9 @@ class Book(Base):
             response.append(genre.name)
         if not response:
             return "Unkown"
+        s = ""
+        for i in response:
+            s = s + i + ", "
         return response
 
     def getAuthors(self):
@@ -43,7 +46,10 @@ class Book(Base):
             response.append(author.name)
         if not response:
             return "Unkown"
-        return response
+        s = ""
+        for i in response:
+            s = s + i +", "
+        return s
 
     def getSeries(self):
         if self.series_id == 0 or self.series_id is None:
