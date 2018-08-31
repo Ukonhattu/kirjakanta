@@ -38,6 +38,7 @@ class Book(Base):
         s = ""
         for i in response:
             s = s + i + ", "
+        s = s[:2]
         return s
 
     def getAuthors(self):
@@ -49,6 +50,7 @@ class Book(Base):
         s = ""
         for i in response:
             s = s + i +", "
+        s = [:2]
         return s
 
     def getSeries(self):
