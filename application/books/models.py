@@ -38,7 +38,7 @@ class Book(Base):
         s = ""
         for i in response:
             s = s + i + ", "
-        return response
+        return s
 
     def getAuthors(self):
         response = []
